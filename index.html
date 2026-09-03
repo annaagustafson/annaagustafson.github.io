@@ -8,10 +8,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --navy: #14213D;
-    --navy-soft: #2A3B63;
-    --gold: #C89B3C;
-    --paper: #F5F1E7;
+    --red: #7A1F2B;
+    --red-soft: #9C3A44;
+    --grey: #8C8C8C;
+    --paper: #F7F5F3;
     --ink: #1E1E1E;
     --line: #D8D0BE;
     --white: #FFFFFF;
@@ -34,10 +34,10 @@
     font-family:'Fraunces', serif;
     font-weight: 600;
     margin:0;
-    color: var(--navy);
+    color: var(--red);
   }
 
-  a { color: var(--navy); }
+  a { color: var(--red); }
 
   .wrap{
     max-width: var(--max);
@@ -45,12 +45,11 @@
     padding: 0 24px;
   }
 
-  /* ---- Masthead ---- */
   .masthead{
-    background: var(--navy);
+    background: var(--red);
     color: var(--paper);
     padding: 56px 0 0;
-    border-bottom: 6px solid var(--gold);
+    border-bottom: 6px solid var(--grey);
   }
 
   .masthead .wrap{
@@ -74,7 +73,7 @@
   .title-line{
     margin-top: 8px;
     font-size: 1.05rem;
-    color: var(--gold);
+    color: var(--grey);
     font-weight: 500;
   }
 
@@ -88,8 +87,8 @@
     height: 128px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid var(--gold);
-    background: var(--navy-soft);
+    border: 3px solid var(--grey);
+    background: var(--red-soft);
     flex-shrink: 0;
   }
 
@@ -112,9 +111,8 @@
     transition: border-color 0.2s ease;
   }
 
-  nav a:hover{ border-color: var(--gold); }
+  nav a:hover{ border-color: var(--grey); }
 
-  /* ---- Sections ---- */
   section{
     padding: 56px 0;
     border-bottom: 1px solid var(--line);
@@ -146,7 +144,6 @@
     font-size: 1.05rem;
   }
 
-  /* ---- Skills ---- */
   .skills-grid{
     display: flex;
     flex-wrap: wrap;
@@ -165,7 +162,6 @@
     font-weight: 500;
   }
 
-  /* ---- Projects ---- */
   .projects-table{
     width: 100%;
     border-collapse: collapse;
@@ -176,9 +172,9 @@
     text-align: left;
     font-family: 'Fraunces', serif;
     font-weight: 600;
-    color: var(--navy);
+    color: var(--red);
     padding: 10px 16px 10px 0;
-    border-bottom: 2px solid var(--navy);
+    border-bottom: 2px solid var(--red);
   }
 
   .projects-table td{
@@ -196,14 +192,13 @@
     display:inline-block;
     font-size: 0.78rem;
     font-weight: 600;
-    color: var(--navy-soft);
+    color: var(--red-soft);
     background: rgba(20,33,61,0.08);
     padding: 2px 10px;
     border-radius: 20px;
     margin-top: 6px;
   }
 
-  /* ---- Resume / Contact ---- */
   .resume-box{
     display:flex;
     align-items:center;
@@ -212,13 +207,13 @@
     gap: 16px;
     background: var(--white);
     border: 1px solid var(--line);
-    border-left: 4px solid var(--gold);
+    border-left: 4px solid var(--grey);
     padding: 20px 24px;
   }
 
   .btn{
     display:inline-block;
-    background: var(--navy);
+    background: var(--red);
     color: var(--paper);
     text-decoration:none;
     padding: 10px 20px;
@@ -227,7 +222,7 @@
     font-size: 0.92rem;
   }
 
-  .btn:hover{ background: var(--navy-soft); }
+  .btn:hover{ background: var(--red-soft); }
 
   .contact-list{
     list-style:none;
@@ -246,7 +241,7 @@
     text-align:center;
     padding: 28px 0 40px;
     font-size: 0.85rem;
-    color: var(--navy-soft);
+    color: var(--red-soft);
   }
 
   @media (max-width: 600px){
@@ -267,7 +262,7 @@
         <h1 class="name">Anna Gustafson</h1>
         <p class="title-line">Marketing Student <span>· University of Utah</span></p>
       </div>
-      <img class="headshot" src="https://via.placeholder.com/128x128/2A3B63/F5F1E7?text=Photo" alt="Headshot of Anna">
+      <img class="headshot" src="headshot.jpg" alt="Headshot of Anna">
     </div>
     <nav>
       <a href="#about">About</a>
@@ -360,8 +355,8 @@
   <section id="contact">
     <div class="section-head"><h2>Contact</h2></div>
     <ul class="contact-list">
-      <li>✉️ <a href="mailto:youruniversityemail@utah.edu">youruniversityemail@utah.edu</a></li>
-      <li>💼 <a href="https://linkedin.com/in/yourname" target="_blank">LinkedIn</a></li>
+      <li>✉️ <a href="mailto:u1514561@utah.edu">u1514561@utah.edu</a></li>
+      <li>💼 <a href="https://linkedin.com/in/anna-gustafson-ba5222353" target="_blank">LinkedIn</a></li>
       <li>🖥️ <a href="https://github.com/annaagustafson" target="_blank">GitHub</a></li>
     </ul>
   </section>
