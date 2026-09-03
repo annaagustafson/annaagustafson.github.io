@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anna — Marketing Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy: #14213D;
+    --navy-soft: #2A3B63;
+    --gold: #C89B3C;
+    --paper: #F5F1E7;
+    --ink: #1E1E1E;
+    --line: #D8D0BE;
+    --white: #FFFFFF;
+    --max: 880px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body{
+    margin:0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Work Sans', sans-serif;
+    line-height: 1.6;
+  }
+
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight: 600;
+    margin:0;
+    color: var(--navy);
+  }
+
+  a { color: var(--navy); }
+
+  .wrap{
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ---- Masthead ---- */
+  .masthead{
+    background: var(--navy);
+    color: var(--paper);
+    padding: 56px 0 0;
+    border-bottom: 6px solid var(--gold);
+  }
+
+  .masthead .wrap{
+    padding-bottom: 40px;
+  }
+
+  .masthead-top{
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .name{
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    color: var(--paper);
+    letter-spacing: 0.5px;
+  }
+
+  .title-line{
+    margin-top: 8px;
+    font-size: 1.05rem;
+    color: var(--gold);
+    font-weight: 500;
+  }
+
+  .title-line span{
+    color: var(--paper);
+    opacity: 0.75;
+  }
+
+  .headshot{
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--gold);
+    background: var(--navy-soft);
+    flex-shrink: 0;
+  }
+
+  nav{
+    margin-top: 40px;
+    display:flex;
+    gap: 28px;
+    flex-wrap: wrap;
+    border-top: 1px solid rgba(245,241,231,0.2);
+    padding-top: 16px;
+  }
+
+  nav a{
+    color: var(--paper);
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 500;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s ease;
+  }
+
+  nav a:hover{ border-color: var(--gold); }
+
+  /* ---- Sections ---- */
+  section{
+    padding: 56px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  section:last-of-type{ border-bottom: none; }
+
+  .section-head{
+    display:flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .section-head h2{
+    font-size: 1.6rem;
+    white-space: nowrap;
+  }
+
+  .section-head::after{
+    content:"";
+    height: 1px;
+    background: var(--line);
+    flex-grow: 1;
+  }
+
+  .about p{
+    max-width: 68ch;
+    font-size: 1.05rem;
+  }
+
+  /* ---- Skills ---- */
+  .skills-grid{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .skills-grid li{
+    background: var(--white);
+    border: 1px solid var(--line);
+    padding: 8px 16px;
+    border-radius: 3px;
+    font-size: 0.92rem;
+    font-weight: 500;
+  }
+
+  /* ---- Projects ---- */
+  .projects-table{
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.96rem;
+  }
+
+  .projects-table th{
+    text-align: left;
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    color: var(--navy);
+    padding: 10px 16px 10px 0;
+    border-bottom: 2px solid var(--navy);
+  }
+
+  .projects-table td{
+    padding: 16px 16px 16px 0;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+
+  .projects-table td:first-child{
+    font-weight: 600;
+    width: 34%;
+  }
+
+  .status{
+    display:inline-block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--navy-soft);
+    background: rgba(20,33,61,0.08);
+    padding: 2px 10px;
+    border-radius: 20px;
+    margin-top: 6px;
+  }
+
+  /* ---- Resume / Contact ---- */
+  .resume-box{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--gold);
+    padding: 20px 24px;
+  }
+
+  .btn{
+    display:inline-block;
+    background: var(--navy);
+    color: var(--paper);
+    text-decoration:none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    font-weight: 500;
+    font-size: 0.92rem;
+  }
+
+  .btn:hover{ background: var(--navy-soft); }
+
+  .contact-list{
+    list-style:none;
+    padding:0;
+    margin:0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 1rem;
+  }
+
+  .contact-list a{ text-decoration: none; }
+  .contact-list a:hover{ text-decoration: underline; }
+
+  footer{
+    text-align:center;
+    padding: 28px 0 40px;
+    font-size: 0.85rem;
+    color: var(--navy-soft);
+  }
+
+  @media (max-width: 600px){
+    .masthead{ padding-top: 40px; }
+    .masthead-top{ flex-direction: column-reverse; }
+    section{ padding: 40px 0; }
+    .projects-table{ font-size: 0.88rem; }
+    .projects-table th:nth-child(2), .projects-table td:nth-child(2){ display:none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="masthead-top">
+      <div>
+        <h1 class="name">Anna Gustafson</h1>
+        <p class="title-line">Marketing Student <span>· University of Utah</span></p>
+      </div>
+      <img class="headshot" src="https://via.placeholder.com/128x128/2A3B63/F5F1E7?text=Photo" alt="Headshot of Anna">
+    </div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#resume">Resume</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section id="about" class="about">
+    <div class="section-head"><h2>About Me</h2></div>
+    <p>
+      I'm a marketing student at the University of Utah, graduating in spring 2028,
+      with a focus on video content, brand storytelling, and campus media. As
+      Recruitment Chair for Chi Omega, a videographer and marketing intern at
+      K-UTE Radio, and Video Marketing Chair for Dance Marathon, I've spent the
+      last few years turning ideas into content that actually reaches an
+      audience. I'm especially interested in how AI tools are reshaping
+      marketing — from campaign analytics to content generation — and I'm
+      building technical skills in data analysis, prompt engineering, and web
+      design to bring a more data-driven edge to creative work.
+    </p>
+  </section>
+
+  <section id="skills">
+    <div class="section-head"><h2>Skills</h2></div>
+    <ul class="skills-grid">
+      <li>Video Production &amp; Editing</li>
+      <li>Content Strategy</li>
+      <li>Social Media Marketing</li>
+      <li>Event Marketing</li>
+      <li>HTML &amp; CSS</li>
+      <li>Data Analytics</li>
+      <li>Microsoft Excel</li>
+      <li>AI Prompt Engineering</li>
+      <li>Git &amp; GitHub</li>
+      <li>Public Speaking</li>
+    </ul>
+  </section>
+
+  <section id="projects">
+    <div class="section-head"><h2>Projects</h2></div>
+    <table class="projects-table">
+      <thead>
+        <tr>
+          <th>Project</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>AI Business Analysis</td>
+          <td>Using AI tools to analyze marketing and business data for trend insights.
+            <div class="status">In progress</div>
+          </td>
+        </tr>
+        <tr>
+          <td>Data Visualization</td>
+          <td>A dashboard summarizing campaign or event performance metrics.
+            <div class="status">Planned</div>
+          </td>
+        </tr>
+        <tr>
+          <td>Campus Media Reel</td>
+          <td>A video marketing piece produced for K-UTE Radio or Dance Marathon.
+            <div class="status">Planned</div>
+          </td>
+        </tr>
+        <tr>
+          <td>Recruitment Strategy Redesign</td>
+          <td>An AI-assisted redesign of a recruitment or event workflow for Chi Omega.
+            <div class="status">Planned</div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="resume">
+    <div class="section-head"><h2>Resume</h2></div>
+    <div class="resume-box">
+      <span>Resume coming soon.</span>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-head"><h2>Contact</h2></div>
+    <ul class="contact-list">
+      <li>✉️ <a href="mailto:youruniversityemail@utah.edu">youruniversityemail@utah.edu</a></li>
+      <li>💼 <a href="https://linkedin.com/in/yourname" target="_blank">LinkedIn</a></li>
+      <li>🖥️ <a href="https://github.com/annaagustafson" target="_blank">GitHub</a></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  &copy; 2026 Anna Gustafson · Built for IS 3060
+</footer>
+
+</body>
+</html>
